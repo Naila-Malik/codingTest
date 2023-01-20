@@ -5,6 +5,7 @@ import * as yup from "yup";
 import MkdSDK from "../utils/MkdSDK";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../authContext";
+// import { AdminDashboardPage } from "./AdminDashboardPage";
 
 const AdminLoginPage = () => {
   const schema = yup
@@ -27,7 +28,15 @@ const AdminLoginPage = () => {
 
   const onSubmit = async (data) => {
     let sdk = new MkdSDK();
+
     //TODO
+    dispatch({ type: "LOGIN" });
+    try {
+      //... const res = axios.post('URL')
+      res && navigate("/admin/dashboard");
+    } catch (error) {
+      // .....
+    }
   };
 
   return (

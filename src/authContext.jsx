@@ -16,6 +16,9 @@ const reducer = (state, action) => {
       //TODO
       return {
         ...state,
+        isAuthenticated: true,
+        user: action.payload,
+        role: action.payload,
       };
     case "LOGOUT":
       localStorage.clear();
@@ -46,6 +49,7 @@ const AuthProvider = ({ children }) => {
 
   React.useEffect(() => {
     //TODO
+    tokenExpireError();
   }, []);
 
   return (
